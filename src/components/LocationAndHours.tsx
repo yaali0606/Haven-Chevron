@@ -80,7 +80,7 @@ export default function LocationAndHours() {
             
             <div className="mt-10">
               <a 
-                href="https://maps.google.com/?q=6411+Haven+Ave,+Rancho+Cucamonga,+CA+91737"
+                href="https://www.google.com/maps/search/?api=1&query=6411+Haven+Ave,+Rancho+Cucamonga,+CA+91737"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full block text-center bg-neutral-dark hover:bg-black text-white py-4 rounded-md font-bold text-lg transition-colors"

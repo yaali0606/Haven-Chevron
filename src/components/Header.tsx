@@ -43,7 +43,7 @@ export default function Header() {
           {/* CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="https://maps.google.com/?q=6411+Haven+Ave,+Rancho+Cucamonga,+CA+91737"
+              href="https://www.google.com/maps/search/?api=1&query=6411+Haven+Ave,+Rancho+Cucamonga,+CA+91737"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-chevron-blue hover:text-blue-800 font-medium transition-colors"
@@ -99,7 +99,7 @@ export default function Header() {
             ))}
             <div className="pt-4 flex flex-col gap-3 px-3">
               <a
-                href="https://maps.google.com/?q=6411+Haven+Ave,+Rancho+Cucamonga,+CA+91737"
+                href="https://www.google.com/maps/search/?api=1&query=6411+Haven+Ave,+Rancho+Cucamonga,+CA+91737"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full border-2 border-chevron-blue text-chevron-blue px-4 py-3 rounded-md font-semibold"

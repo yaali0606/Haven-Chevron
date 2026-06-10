@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Calendar, CheckCircle, ChevronRight, Clock, User, Wrench, Settings } from 'lucide-react';
 
 type Step = 1 | 2 | 3 | 4;
@@ -15,6 +15,7 @@ export default function ServiceScheduler() {
     preferredDate: '',
     preferredTime: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,12 +29,37 @@ export default function ServiceScheduler() {
     if (currentStep > 1) setCurrentStep((prev) => (prev - 1) as Step);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
-    setTimeout(() => {
-      setCurrentStep(4);
-    }, 600);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+          subject: "New Service Request for Haven Chevron & NAPA AutoCare",
+          from_name: formData.name,
+          ...formData
+        })
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setCurrentStep(4);
+      } else {
+        alert("There was an error submitting the form. Please call us directly at (909) 948-0102.");
+      }
+    } catch (error) {
+      alert("There was an error submitting the form. Please call us directly at (909) 948-0102.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -135,6 +161,7 @@ export default function ServiceScheduler() {
 
             {currentStep === 3 && (
               <form onSubmit={handleSubmit} className="animate-fade-in">
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                   <User className="w-6 h-6 text-chevron-blue" /> Contact & Schedule
                 </h3>
@@ -170,8 +197,8 @@ export default function ServiceScheduler() {
                   </div>
                   <div className="flex gap-4 w-full sm:w-auto justify-between sm:justify-end">
                     <button type="button" onClick={prevStep} className="px-4 py-2 rounded-md font-semibold text-gray-600 hover:bg-gray-200 transition-colors">Back</button>
-                    <button type="submit" className="bg-chevron-red hover:bg-red-700 text-white px-8 py-3 rounded-md font-bold transition-colors shadow-md">
-                      Confirm Booking
+                    <button type="submit" disabled={isSubmitting} className="bg-chevron-red hover:bg-red-700 text-white px-8 py-3 rounded-md font-bold transition-colors shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed">
+                      {isSubmitting ? 'Submitting...' : 'Confirm Booking'}
                     </button>
                   </div>
                 </div>
