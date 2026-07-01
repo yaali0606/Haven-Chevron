@@ -17,6 +17,11 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
+            <img 
+              src="/Chevron_Techron_logo_crop.png" 
+              alt="Chevron Techron Logo" 
+              className="h-12 w-auto md:h-16 mr-3 object-contain" 
+            />
             <a href="#" className="flex flex-col">
               <span className="text-xl md:text-2xl font-bold text-chevron-blue leading-tight">
                 Haven Chevron

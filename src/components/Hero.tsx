@@ -79,7 +79,7 @@ export default function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-4 mb-6 md:mb-10 text-lg md:text-xl text-gray-200">
             <ul className="flex flex-col gap-2 font-medium">
-              <li className="flex items-center gap-2"><Fuel className="w-5 h-5 text-chevron-blue" /> Techron Fuel 24/7</li>
+              <li className="flex items-center gap-2"><Fuel className="w-5 h-5 text-chevron-blue" /> 24/7 Techron Gas & Diesel Station</li>
               <li className="flex items-center gap-2"><Wrench className="w-5 h-5 text-napa-yellow" /> Certified NAPA AutoCare Repairs</li>
               <li className="flex items-center gap-2"><Droplet className="w-5 h-5 text-blue-400" /> Daily Propane Refills</li>
               <li className="flex items-center gap-2"><Coffee className="w-5 h-5 text-chevron-red" /> Fully Stocked Snack Shop</li>

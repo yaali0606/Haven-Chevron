@@ -23,18 +23,24 @@ export default function ServicesGrid() {
       image: "/Mechanic.jpg",
       alt: "NAPA AutoCare certified repair and smog service bays at Haven Chevron",
       description: "Certified ASE mechanics providing full-service automotive care. From routine oil changes to complex engine diagnostics.",
-      features: ["Official California Smog Checks", "Brake System Repairs", "Check Engine Light Diagnostics"],
+      features: [
+        "STAR Certified Smog Checks for All Vehicles & RVs",
+        "Elite Tire Services: Precision Repairs & Premium New Tires",
+        "Comprehensive Full-Service Auto Mechanics",
+        "Brake System Repairs",
+        "Engine & Transmission Diagnostics & Repairs"
+      ],
       badge: "Backed by the NAPA Peace of Mind Warranty",
       badgeColor: "bg-napa-yellow text-neutral-dark"
     },
     {
-      title: "Propane Refills",
+      title: "Premium Propane Refilling Station",
       icon: <Droplet className="w-10 h-10 text-blue-500" />,
       image: "/propone.jpg",
       alt: "Drive-up propane cylinder filling and tank exchange station",
-      description: "Fast, convenient propane refilling services (no tank exchanges). Available seven days a week from 7:00 AM to 7:00 PM.",
-      features: ["Refills: $3.99 / Gallon (~4.5 gal for 20lb)", "$10 Min. for Tanks (2.5 Gal)", "$15 Min. for RVs (3.75 Gal)", "New Full Tanks: $69.99 + tax"],
-      badge: "Open Daily 7 AM - 7 PM",
+      description: "Experience fast, hassle-free propane refilling with our spacious, easy-access drive-up station. Our certified attendants expertly handle everything from standard BBQ grill cylinders to full-sized RV tanks.",
+      features: ["All Tank Sizes & Types Refilled", "Spacious RV Drive-Up Access", "New Pre-Filled Tanks Available", "Fast & Money Saver"],
+      badge: "RV Accessible • Open Daily 7 AM - 7 PM",
       badgeColor: "bg-blue-100 text-blue-800",
       imageFit: "cover",
       imagePosition: "object-top"
@@ -42,15 +48,17 @@ export default function ServicesGrid() {
     {
       title: "Snack Shop & Convenience",
       icon: <Coffee className="w-10 h-10 text-chevron-red" />,
-      image: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80&w=600",
+      image: "/Snack.jpeg",
       alt: "Haven Chevron fully stocked snack shop and food center",
       description: "Your perfect pit stop for fresh provisions, hot coffee, and travel necessities.",
       features: ["Fresh Premium Coffee", "Chilled Beverages & Energy Drinks", "Rapid Grab-and-Go Snacks"],
       badge: "Chevron Rewards Accepted",
-      badgeColor: "bg-red-100 text-chevron-red"
+      badgeColor: "bg-red-100 text-chevron-red",
+      imageFit: "cover",
+      imagePosition: "object-top"
     },
     {
-      title: "Chevron Techron Fuel",
+      title: <>Chevron Diesel #2<br />Chevron Techron gas</>,
       icon: <Fuel className="w-10 h-10 text-chevron-blue" />,
       image: "https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&q=80&w=600",
       alt: "Haven Chevron clean refueling lanes at 6411 Haven Ave",
