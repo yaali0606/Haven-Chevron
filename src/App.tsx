@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ServicesGrid from './components/ServicesGrid';
@@ -18,6 +19,7 @@ export default function App() {
         <LocationAndHours />
       </main>
       <Footer />
+      <SpeedInsights />
     </div>
   );
 }
